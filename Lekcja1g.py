@@ -22,9 +22,9 @@ gender = input("Podaj swoją płeć K/M ")
 # else:
 #     print("Nie możesz wejść na imprezę.")
 
-# if gender == 'K':
+# if gender.upper() == 'K':                                 # argument '.upper()' dla zmiennej zmienia input na wielką literę
 #     print("Możesz wejść na imprezę za darmo.")
-# elif gender == 'M':
+# elif gender.upper() == 'M':
 #     print("Możesz wejść na imprezę za 10zł.")
 # else:
 #     print("Podaj poprawną płeć.")
