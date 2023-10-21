@@ -15,3 +15,14 @@ c = "kotek" #zmienna tekstowa musi być w "" lub ''     typ danych - string (str
 d = a + b + 4
 print(d)
 print(a * (c + ' ')) #można do siebie dodać napisy
+
+print('\n') #tworzy nową linię
+
+liczba1 = 3
+liczba2 = '3'
+
+print(3 * liczba1)
+print(2 * liczba2)
+
+print(type(liczba1))    #sprawdza typ danych (class) np int, str
+print(type(liczba2))
