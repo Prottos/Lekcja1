@@ -24,5 +24,7 @@ price = 3
 pack = 3
 amount = int(input("Ile pomidorów chcesz kupić? "))
 
-print(f"Zapłacisz razem {amount // 3 * 3 * 3 * 0.8 + amount % 3 * 3}zł.")
+print(f"Zapłacisz razem {round((amount // 3 * 3 * 0.8 + amount % 3) * price, 2)}zł.")
 print(f"Najlepiej kupić {amount // 3} paczek i {amount % 3} pojedynczych pomidorów.")
+
+# polecenie round() zaokrągla liczbę - domyślnie do calości, ale możemy to zmienić poprzez dodanie po przecinku liczby miejsca po przecinku np. round(x, 2) - zaokrągli do 2 miejsca po przecinku
