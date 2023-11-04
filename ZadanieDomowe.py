@@ -12,8 +12,8 @@ Password_list = ["1234","2345","5678","6789"]
 User_password = [User_list,Password_list]
 
 while True:
-    nast = input(print("Czy chcesz dodać nową osobę? T/N "))
-    if nast != "T":
+    nast = input("Czy chcesz dodać nową osobę? T/N ")
+    if nast.upper() != "T":
         break
     else:
         name = input("Podaj imię: ")
