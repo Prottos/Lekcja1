@@ -7,13 +7,16 @@ import random
 
 def define_password(username):
     password = input("Nadaj hasło: ")
-    password2 = input("Potwierdź hasło: ")
-    if password == password2 and is_pass_correct(password):
-        user_list[username] = password
-        add_user(username, password)
-        return password
+    if is_pass_correct(password):
+        password2 = input("Potwierdź hasło: ")
+        if password == password2:
+            user_list[username] = password
+            add_user(username, password)
+            return password
+        else:
+            print("Hasła nie są identyczne")
     else:
-        print("Hasła nie są identyczne, lub nie spełniają wymagań, spróbuj ponownie.")
+        print("Hasło nie jest poprawne")
 
 
 def add_user(username, password):
