@@ -1,4 +1,4 @@
-from Lekcja4 import define_password
+from Lekcja4 import define_password                     # gdyby wpisać "*" zaimportuje wszystko z pliku
 from Lekcja4 import check_user
 
 user_list = {"majki": "1234", "Kamil": "2345", "Rafcio": "3456", "Kamil001": "4567", "Betty": "5678"}
