@@ -27,3 +27,45 @@ print(f"Na Winogradach chorowało w ostatnim roku {len(winogrady.intersection(ch
 
 print(f"Na Wildzie chorowało w ostatnim miesiącu {len(wilda & chorzy_miesiac)} osób.")
 print(f"Na Wildzie chorowało w ostatnim miesiącu {len(wilda.intersection(chorzy_miesiac))} osób.")
+
+# sprawdzamy poprawność danych:
+# każdy kto chorował w ostatnim miesiącu chorował też w ostatnim roku
+
+print(f"Osoby które chorowały w ostatnim miesiącu ale NIE chorowały w ostatnim roku: {chorzy_miesiac - chorzy_rok}")
+
+# czy nie dublują się mieszkańcy
+
+print(f"Osoby zapisane jako mieszkające zarówno na Wildzie jak i na Winogadach {wilda & winogrady}")
+x = input("Skąd usunąć? A - Wilda, B - Winogrady ")
+if x == "A":
+    winogrady = winogrady - (wilda & winogrady)
+elif x == "B":
+    wspolne = wilda & winogrady
+# wykonuje pętlę i 
+    for pesel in wspolne:
+        wilda.remove(pesel)
+else:
+    print("Nie rozpoznano wyboru, usuwam z Winograd.")
+    winogrady = winogrady - wilda
+
+print(winogrady)
+print(wilda)
+
+# każdy chory powinien być w bazie
+
+wszyscy = chorzy_rok | chorzy_miesiac | wilda | winogrady
+print(f"W bazie NFZ nie ma osób: {wszyscy - NFZ}")
+NFZ = NFZ | wszyscy
+
+# pesele żeńskie mają ostatnią cyfrę parzystą, męskie nieparzystą, zrób osobne zbiory dla mężczyzn i kobiet
+
+mezczyzni = set()
+kobiety = set()
+for pesel in NFZ:
+    if pesel % 2 == 0:
+        kobiety.add(pesel)
+    else:
+        mezczyzni.add(pesel)
+
+print(kobiety)
+print(mezczyzni)
