@@ -17,6 +17,7 @@ def clear(content):
     return content_clear
 # 3
 def split(content_clear):
+    clear(content)
     content_split = content_clear.split()
     return content_split
 
@@ -36,6 +37,6 @@ def amount(content_split):
             amount[i] += 1
     return amount
 
-print(f"Liczba słów: {len(split(clear(content)))}")
+print(f"Liczba słów: {len(split(content))}")
 print(f"W tekście jest {len(unique(split(clear(content))))} unikalnych słów")
 print(amount(split(clear(content))))
