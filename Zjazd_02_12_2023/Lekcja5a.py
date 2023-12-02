@@ -12,7 +12,7 @@ recipe = {'mleko' : 1, 'jajko' : 8, 'maka' : 0.5, 'cukier' : 0.3}
 
 # Zadanie, napisać program liczący, ile ciast możemy upiec z posiadanych produktów.
 
-# critical = ""
+# critical = {}
 # how_many = list()
 # for i in available:
 #     if i not in recipe:
@@ -21,9 +21,7 @@ recipe = {'mleko' : 1, 'jajko' : 8, 'maka' : 0.5, 'cukier' : 0.3}
 #     else:
 #         x = available[i] // recipe [i]
 #         how_many.append(x)
-#         critical = i
-# critical = 
-# print(f"Zrobisz maksymalnie {min(how_many)} ciast, najszybciej zabraknie {i}.")
+# print(f"Zrobisz maksymalnie {min(how_many)} ciast, najszybciej zabraknie {x}.")
 
 
 
