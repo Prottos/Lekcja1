@@ -1,11 +1,13 @@
 class CityAnalizer:
     def __init__(self, filename = "F:\WSB\Lekcja1\Zjazd_16_12_2023\dane.csv"):
         self.cities = {}
-        self.filename = filename
-        
-        with open(self.filename, "r", encoding="UTF8") as file:
+        self.load_data(filename)
+
+    def load_data(self, filename = "F:\WSB\Lekcja1\Zjazd_16_12_2023\dane.csv"):
+        with open(filename, "r", encoding="UTF8") as file:
             first_line = file.readline()
             lines = file.readlines()
+        
         data = [line.strip().split(",") for line in lines]
 
         for row in data:
@@ -38,6 +40,29 @@ class CityAnalizer:
                 avg_age = data["total_age"]/data["number"]
                 avg_weight = data["total_weight"]/data["number"]
                 print(f"W {city:<2.2} średni wzrost wynosi: {avg_height:.{x}f}cm, wiek: {avg_age:.{x}f} lat, waga {avg_weight:.{x}f}kg")    # formatowanie graficzne city:<8.8 dociąganie do prawej/lewej i odcinanie znaków powyżej jakiejś wartości
+    def show_cities(self):
+        print("Dostępne miasta w bazie: ", end="")
+        # for city in self.cities.keys():
+            # print(city, end=", ")
+        list = ", ".join(self.cities.keys())
+        print (list)
 
-city = CityAnalizer()
-city.show_avg("Warszawa")
+def main():
+    city = CityAnalizer()
+    while True:
+        city.show_cities()
+        chose = input("Podaj nazwę miasta, 'load' aby załadować inny plik lub 'exit' aby wyjść: ").capitalize()
+        if chose.lower() == "exit":
+            print("Koniec programu.")
+            break
+        elif chose.lower() == "load":
+            city.load_data()
+            print("Dane wczytane ponownie.")
+        else:
+            city.show_avg(chose)
+
+if __name__ == "__main__":
+    main()
+# city = CityAnalizer()
+# city.show_avg("Warszawa")
+# city.show_cities()
