@@ -4,9 +4,9 @@ with open("F:\WSB\Lekcja1\Zjazd_16_12_2023\dane.csv", "r", encoding="UTF8") as f
 
 data = [line.strip().split(",") for line in lines]
 
-cities_height = {}
-cities_age = {}
-cities_weight = {}
+# cities_height = {}
+# cities_age = {}
+# cities_weight = {}
 
 # for row in data:
 #     city = row[4]
@@ -45,7 +45,9 @@ cities_weight = {}
 #     avg = data["total"]/data["number"]
 #     print(f"W {city} średnia waga wynosi {round(avg, 2)}kg")
 
-
+cities_height = {}
+cities_age = {}
+cities_weight = {}
 
 for row in data:
     city = row[4]
@@ -70,7 +72,7 @@ for row in data:
 
 for city, data in cities_height.items():
     avg_height = data["total"]/data["number"]
-    print(f"W {city} średni wzrost wynosi {round(avg_height, 2)}cm")
+    print(f"W {city} średni wzrost wynosi {round(avg_height, 2)}cm")            # zamiast round(avg_height, 2) możemy użyć avg_height:.2f
 for city, data in cities_age.items():
     avg_age = data["total"]/data["number"]
     print(f"W {city} średni wiek wynosi {round(avg_age, 2)} lat")
